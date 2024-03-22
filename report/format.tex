@@ -1,0 +1,39 @@
+\renewcommand{\rmdefault}{lmr} % Arial
+\renewcommand{\sfdefault}{lmr} % Arial
+\RedeclareSectionCommand[
+ beforeskip=0cm % reduce margins at chapters
+]{chapter}
+\fancyhead[C]{}
+\fancyhead[R]{}        
+\pagestyle{fancy} %fancy header: only display chapter
+\fancyhead[L] {
+    \leftmark{}
+}                
+\linespread{1.25} %entspricht 1,5 in word
+% \counterwithout{figure}{chapter} %Abb.1 not Abb.[chapter].1
+
+
+\lstdefinestyle{mystyle}{
+   backgroundcolor=\color{codegray},  % Hintergrundfarbe
+   commentstyle=\color{commentcolor},
+   keywordstyle=\color{codeblue},
+   numberstyle=\tiny\color{codeblack},
+   stringstyle=\color{codepurple},
+   basicstyle=\ttfamily\footnotesize,
+   breakatwhitespace=false,
+   breaklines=true,
+   captionpos=b,
+   keepspaces=true,
+   numbers=left,
+   numbersep=5pt,
+   showspaces=false,
+   showstringspaces=false,
+   showtabs=false,
+   tabsize=2,
+%    language=C,
+   postbreak=\mbox{\textcolor{red}{$\hookrightarrow$}\space}
+}
+
+\lstset{style=mystyle}
+
+

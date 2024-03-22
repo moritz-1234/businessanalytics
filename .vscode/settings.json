@@ -1,0 +1,12 @@
+{
+    "files.exclude": {
+        "**/*.aux": true,
+        "**/*.fdb_latexmk": true,
+        "**/*.fls": true,
+        "**/*synctex.gz": true,
+        "**/*.bbl":true,
+        "**/*.run.xml":true
+        },
+        "ltex.language": "en-US",
+        "latex-workshop.latex.autoClean.run": "onBuilt",
+    }

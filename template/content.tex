@@ -1,0 +1,50 @@
+\chapter{Task}
+\section {Robot station}
+Composition of the real robotic station with an explanation of the function of each part.
+\section {Kinematic scheme}
+A kinematic scheme of the robot.
+
+\section {Rapid programs}
+Your executable RAPID modules with an explanation of corrections you made in the module Description section.
+\section{Conclusion}
+Conclusions on the program implementation and modification
+\chapter{Solution}
+\section {Robot station}
+
+In \autoref{robot_station} three parts of the station are recognizable.
+\par
+\textbf{A:} ABB IRB 14000 robot\newline
+\textbf{B:} FlexPendant robot controller\newline
+\textbf{C:} Lab computer connected to FlexPendant. From there, the program is transferred to the robot.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{images/station.jpg}
+    \caption{Robot station}
+    \label {robot_station}
+\end{figure}
+
+
+\section {Kinematic scheme}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{diagrams/kinematic_diagram_b.png}
+    \caption{Kinematic scheme}
+    \label {kinematic_diagram}
+\end{figure}
+
+
+\section {Rapid programs}
+\subsection{Lab 1}
+\lstinputlisting{rapid/lab1_l_new.mod}
+\lstinputlisting{rapid/lab1_r_new.mod}
+\subsection{Lab 2}
+\lstinputlisting{rapid/lab2_l_new.mod}
+
+\section{Conclusion}
+To adapt the simulated programs to the real robot, the main change that has been made was ensuring a similar starting position between runs.
+For that, the robot is always returned to its home position after each program.
+\par
+After that, the simulated programs had to be tested with slow speed to make sure the gripper does not hit the table and the preconfigured targets were correct.
+\newline
+Finally, it was a very rewarding experience to see the simulated programs working on the real robot. 
+

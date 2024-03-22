@@ -1,0 +1,39 @@
+\documentclass[12pt, toc = bibliography, english]{scrreprt} %display bibliography in table of contents
+\usepackage[utf8]{inputenc} %input encoding
+\usepackage[T1]{fontenc} %font encoding
+\usepackage{lmodern} %font
+\usepackage{babel}
+\usepackage{pdfpages} %allow import of pdf
+\usepackage[hidelinks]{hyperref} %do not display links underlined and in color
+\usepackage{bookmark} % for hyperref
+\usepackage[backend=biber, citestyle=ieee, sorting=none]{biblatex} %bibliography
+\usepackage{csquotes} %german quote style
+\usepackage{acro} %acronyms
+\usepackage[a4paper,left=3cm, right = 2cm]{geometry} %size of document
+\usepackage{setspace}
+\usepackage{parskip} % do not make indentations at paragraphs
+\usepackage{float} %allow [H] for images to stay where you want them
+\usepackage{xcolor}
+\usepackage{fancyhdr}
+\usepackage{xurl} %avoid overful hbox by breaking urls everywhere
+\usepackage{listings} % Für Code-Listings
+\usepackage{adjustbox}
+
+\include{colors}
+\include{format}
+\input{acronyms.tex} 
+\addbibresource{../../sources.bib}
+
+\begin{document}
+\include{coverletter}
+
+\tableofcontents
+\listoffigures
+\addcontentsline{toc}{chapter}{\listfigurename} %Abbildungsverzeichnis in table of content
+% \listoftables
+% \addcontentsline{toc}{chapter}{\listtablename} %Abbildungsverzeichnis in table of content
+
+\include{content}
+
+% \printbibliography
+\end{document}
