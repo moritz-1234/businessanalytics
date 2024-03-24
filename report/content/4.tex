@@ -2,10 +2,37 @@
 
 \section{Model usage}
 \subsection{Assessing expectations}
+\begin{table}[H]
+    \begin{adjustbox}{width={\textwidth}}
+        \begin{tabular}{|l|l|l|l|l|l|l|l|}
+            \hline
+            Registration year & Mileage & Horsepower & Width (mm) & Length (mm) & Average mpg & Top speed (mph) & Predicted price \\ \hline
+            2019              & 60000   & 135        & 2027       & 4284        & 49          & 116             & 17596           \\\hline
+            2019              & 130000  & 135        & 2027       & 4284        & 49          & 116             & 15267           \\\hline
+        \end{tabular}
+    \end{adjustbox}
+    \caption{Assessing expectations}
+    \label{table_data}
+\end{table}
 \subsection{Usage of example data}
+\begin{table}[H]
+    \begin{adjustbox}{width={\textwidth}}
+
+        \begin{tabular}{|l|l|l|l|l|l|l|l|}
+            \hline
+            Registration year & Mileage & Horsepower & Width (mm) & Length (mm) & Average mpg & Top speed (mph) & Predicted price (£) \\\hline
+            2014              & 180000  & 110        & 1799       & 4204        & 45          & 110             & 5601                \\\hline
+            2016              & 150000  & 120        & 2027       & 4255        & 48          & 112             & 12130               \\\hline
+            2018              & 80000   & 130        & 2027       & 4255        & 50          & 115             & 16136               \\\hline
+            2015              & 190000  & 115        & 1799       & 4204        & 44          & 108             & 5819                \\ \hline
+        \end{tabular}
+    \end{adjustbox}
+    \caption{Assessing model for business usecases}
+    \label{table_data}
+\end{table}
 \section{Findings}
 \subsection{In line with presumptions}
 \subsection{Outliers}
-\subsubsection{Correlation: engine size $\leftrightarrow$ price}
-\subsubsection{Correlation: width $\leftrightarrow$ price}
-\subsubsection{Correlation: year $\leftrightarrow$ price}
+\subsubsection{Engine size $\leftrightarrow$ Price}
+\subsubsection{Width $\leftrightarrow$ Price}
+\subsubsection{Year $\leftrightarrow$ Price $\leftrightarrow$ Mileage}
