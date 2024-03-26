@@ -23,9 +23,9 @@ However, for an over 2-fold increase in miles, the depreciation is with 14.4 \% 
 While comparing two otherwise identical cars, it should be noted that the other values still contribute significantly to the
 result.
 \newline
-In particular the registration year, which, as shown before, strongly correlates with the target variable has an effect on the limited
+In particular the registration year, which, as shown before, strongly correlates with the target variable, has an effect on the limited
 influence of the mileage here.
-Given the data set's sampling of data up to 2017, both of the \ac{vw} Golfs in \autoref{mileage_data_new_car} have been first registered only one year ago, so the base price is measurably higher.
+Given the data set's sampling of data up to 2017, both of the \ac{vw} Golfs in \autoref{mileage_data_new_car} have been first registered very recently, so the base price is measurably higher.
 If you apply the same example to cars registered in 2010, which therefore have been running for seven years, the influence of the mileage grows.
 \begin{table}[H]
     \begin{adjustbox}{width={\textwidth}}
@@ -44,9 +44,9 @@ As shown in \autoref{mileage_data_old_car}, the gap between the two otherwise id
 Potential reasons for the strong correlation between year and target value will be investigated further in \autoref{year_to_price_correlation}.
 Nevertheless, for that small subset of data, the efficacy of the model is evident.
 \subsection{Usage of example data}
-However, this small example is not cohesive enough to demonstrate the ability to solve the business problem.
+However, this small example is not cohesive enough to demonstrate the ability to solve the aforementioned business problem.
 To apply the model to a day-to-day use case as it regularly appears in a dealership, it was used to predict the advertisement price
-of four cars as they could be in its yard.
+of four automobiles as they could be in its yard.
 \begin{table}[H]
     \begin{adjustbox}{width={\textwidth}}
         \begin{tabular}{|c|c|c|c|c|c|c|c|}
@@ -62,6 +62,9 @@ of four cars as they could be in its yard.
     \caption{Assessing model for business use cases}
     \label{predicted_price_realworld_data}
 \end{table}
+\autoref{predicted_price_realworld_data} illustrates that the model is able to predict an appropriate advertisement price
+for a \ac{vw} Golf. As the model's quality with $R^2 = 0.927$ is very good, the dealer can rely on it, receiving a data driven
+estimate for a competitive price, thus not having to rely solely on human estimate. 
 \section{Findings}
 \subsection{In line with presumptions}
 \subsubsection{Mileage $\leftrightarrow$ Price}
