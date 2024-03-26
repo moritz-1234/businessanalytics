@@ -1,19 +1,45 @@
 \chapter{Findings and discussion}
-
 \section{Model usage}
+Given the regression model, it can be applied to example data to examine its behavior.
 \subsection{Assessing expectations}
+Intuitive assumptions draw you to the conclusion, that the vehicle's mileage has an inverse relationship to the predicted advertisement price.
 \begin{table}[H]
     \begin{adjustbox}{width={\textwidth}}
         \begin{tabular}{|l|l|l|l|l|l|l|l|}
             \hline
             Registration year & \textbf{Mileage} & Horsepower & Width (mm) & Length (mm) & Average mpg & Top speed (mph) & \textbf{Predicted price} \\ \hline
-            2019              & \textbf{60000}   & 135        & 2027       & 4284        & 49          & 116             & \textbf{17596}           \\\hline
-            2019              & \textbf{130000}  & 135        & 2027       & 4284        & 49          & 116             & \textbf{15267}           \\\hline
+            2017              & \textbf{60000}   & 135        & 2027       & 4284        & 49          & 116             & \textbf{16157}           \\\hline
+            2017              & \textbf{130000}  & 135        & 2027       & 4284        & 49          & 116             & \textbf{13828}           \\\hline
         \end{tabular}
     \end{adjustbox}
-    \caption{Assessing expectations}
-    \label{table_data}
+    \caption{Influence of mileage on recently registered cars}
+    \label{mileage_data_new_car}
 \end{table}
+As it can be observed in \autoref{mileage_data_new_car}, a higher mileage in fact reduces the predicted price.
+However, for an over 2-fold increase in miles, the depreciation is with 14.4 \% not as high as expected.
+\par
+While comparing two otherwise identical cars, it should be noted that the other values still contribute significantly to the
+result.
+\newline
+In particular the registration year, which, as shown before, strongly correlates with the target variable has an effect on the limited
+influence of the mileage here.
+Given the dataset's sampling of data up to 2017, both of the \ac{vw} Golfs in\autoref{mileage_data_new_car} have been first registered only one year ago, so the base price is measurably higher.
+If you apply the same example to cars registered in 2010, which therefore have been running for seven years, the influence of the mileage grows.
+\begin{table}[H]
+    \begin{adjustbox}{width={\textwidth}}
+        \begin{tabular}{|l|l|l|l|l|l|l|l|}
+            \hline
+            \textbf{Registration year} & \textbf{Mileage} & Horsepower & Width (mm) & Length (mm) & Average mpg & Top speed (mph) & \textbf{Predicted price} \\ \hline
+            \textbf{2010}              & \textbf{60000}   & 135        & 2027       & 4284        & 49          & 116             & \textbf{11122}           \\\hline
+            \textbf{2010}              & \textbf{130000}  & 135        & 2027       & 4284        & 49          & 116             & \textbf{8793}           \\\hline
+        \end{tabular}
+    \end{adjustbox}
+    \caption{Influence of mileage on older cars}
+    \label{mileage_data_old_car}
+\end{table}
+As shown in \autoref{mileage_data_old_car}, the gap between the two otherwise identical vehicles has widened to 20.9 \%, a sharp increase by 45.2 \%.
+
+
 \subsection{Usage of example data}
 \begin{table}[H]
     \begin{adjustbox}{width={\textwidth}}
@@ -27,7 +53,7 @@
         \end{tabular}
     \end{adjustbox}
     \caption{Assessing model for business use cases}
-    \label{table_data}
+    \label{predicted_price_realworld_data}
 \end{table}
 \section{Findings}
 \subsection{In line with presumptions}
