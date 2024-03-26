@@ -8,17 +8,17 @@ To evaluate if the model also follows this behavior, it was applied to manually 
     \begin{adjustbox}{width={\textwidth}}
         \begin{tabular}{|c|c|c|c|c|c|c|c|}
             \hline
-            Registration year & \textbf{Mileage} & Horsepower & Width & Length & Average mpg & Top speed & \textbf{Predicted price} \\
-                              & \textbf{(mi)}    &            & (mm)  & (mm)   &             & (mph)     & \textbf{(£)}             \\ \hline
-            2017              & \textbf{60000}   & 135        & 2027  & 4284   & 49          & 116       & \textbf{16157}           \\\hline
-            2017              & \textbf{130000}  & 135        & 2027  & 4284   & 49          & 116       & \textbf{13828}           \\\hline
+            Registration & \textbf{Mileage} & Horse- & Width & Length & Average & Top speed & \textbf{Predicted price} \\[-1ex]
+            year         & \textbf{(mi)}    & power  & (mm)  & (mm)   & mpg     & (mph)     & \textbf{(£)}             \\ \hline
+            2017         & \textbf{60000}   & 135    & 2027  & 4284   & 49      & 116       & \textbf{16157}           \\\hline
+            2017         & \textbf{130000}  & 135    & 2027  & 4284   & 49      & 116       & \textbf{13828}           \\\hline
         \end{tabular}
     \end{adjustbox}
     \caption{Influence of mileage on recently registered cars}
     \label{mileage_data_new_car}
 \end{table}
-As it can be observed in \autoref{mileage_data_new_car}, a higher mileage in fact reduces the predicted price.
-However, for an over 2-fold increase in miles, the depreciation is with 14.4 \% not as high as expected.
+As it is evident in \autoref{mileage_data_new_car}, a higher mileage in fact reduces the predicted price.
+However, for an over 2-fold increase in miles, the depreciation is with 14.4 \% not as high as initially expected.
 \par
 While comparing two otherwise identical cars, it should be noted that the other values still contribute significantly to the
 result.
@@ -31,29 +31,32 @@ If you apply the same example to cars registered in 2010, which therefore have b
     \begin{adjustbox}{width={\textwidth}}
         \begin{tabular}{|c|c|c|c|c|c|c|c|}
             \hline
-            \textbf{Registration year} & \textbf{Mileage} & Horsepower & Width & Length & Average mpg & Top speed & \textbf{Predicted price} \\
-                                       & \textbf{(mi)}    &            & (mm)  & (mm)   &             & (mph)     & \textbf{(£)}             \\ \hline
-            \textbf{2010}              & \textbf{60000}   & 135        & 2027  & 4284   & 49          & 116       & \textbf{11122}           \\\hline
-            \textbf{2010}              & \textbf{130000}  & 135        & 2027  & 4284   & 49          & 116       & \textbf{8793}            \\\hline
+            \textbf{Registration} & \textbf{Mileage} & Horse- & Width & Length & Average & Top speed & \textbf{Predicted price} \\[-1ex]
+            \textbf{year}         & \textbf{(mi)}    & power  & (mm)  & (mm)   & mpg     & (mph)     & \textbf{(£)}             \\ \hline
+            \textbf{2010}         & \textbf{60000}   & 135    & 2027  & 4284   & 49      & 116       & \textbf{11122}           \\\hline
+            \textbf{2010}         & \textbf{130000}  & 135    & 2027  & 4284   & 49      & 116       & \textbf{8793}            \\\hline
         \end{tabular}
     \end{adjustbox}
-    \caption{Influence of mileage on older cars.}
+    \caption{Influence of mileage on older cars}
     \label{mileage_data_old_car}
 \end{table}
-As shown in \autoref{mileage_data_old_car}, the gap between the two otherwise identical vehicles has widened to 20.9 \%, an increase by 45.2 \%.
+As shown in \autoref{mileage_data_old_car}, the gap between the two otherwise identical vehicles has widened to 20.9 \%, an increase by 45.3 \%.
 Potential reasons for the strong correlation between year and target value will be investigated further in \autoref{year_to_price_correlation}.
-Nevertheless, it can clearly be detected
+Nevertheless, for that small subset of data, the efficacy of the model is evident.
 \subsection{Usage of example data}
+However, this small example is not cohesive enough to demonstrate the ability to solve the business problem.
+To apply the model to a day-to-day use case as it regularly appears in a dealership, it was used to predict the advertisement price
+of four cars as they could be in its yard.
 \begin{table}[H]
     \begin{adjustbox}{width={\textwidth}}
         \begin{tabular}{|c|c|c|c|c|c|c|c|}
             \hline
-            Registration year & Mileage & Horsepower & Width & Length & Average mpg & Top speed & \textbf{Predicted price} \\
-                              & (mi)    &            & (mm)  & (mm)   &             & (mph)     & \textbf{(£)}             \\ \hline
-            2014              & 180000  & 110        & 1799  & 4204   & 45          & 110       & \textbf{5601}            \\\hline
-            2016              & 150000  & 120        & 2027  & 4255   & 48          & 112       & \textbf{12130}           \\\hline
-            2018              & 80000   & 130        & 2027  & 4255   & 50          & 115       & \textbf{16136}           \\\hline
-            2015              & 190000  & 115        & 1799  & 4204   & 44          & 108       & \textbf{5819}            \\ \hline
+            Registration & Mileage & Horse- & Width & Length & Average & Top speed & \textbf{Predicted price} \\[-1ex]
+            year         & (mi)    & power  & (mm)  & (mm)   & mpg     & (mph)     & \textbf{(£)}             \\ \hline
+            2014         & 180000  & 110    & 1799  & 4204   & 45      & 110       & \textbf{5601}            \\\hline
+            2016         & 150000  & 120    & 2027  & 4255   & 48      & 112       & \textbf{12130}           \\\hline
+            2018         & 80000   & 130    & 2027  & 4255   & 50      & 115       & \textbf{16136}           \\\hline
+            2015         & 190000  & 115    & 1799  & 4204   & 44      & 108       & \textbf{5819}            \\ \hline
         \end{tabular}
     \end{adjustbox}
     \caption{Assessing model for business use cases}
