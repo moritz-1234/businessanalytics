@@ -3,13 +3,15 @@
 Given the regression model, it can be applied to example data to examine its behavior.
 \subsection{Assessing expectations}
 Intuitive assumptions draw you to the conclusion, that the vehicle's mileage has an inverse relationship to the predicted advertisement price.
+To evaluate if the model also follows this behavior, it was applied to manually created data differentiating only by mileage.
 \begin{table}[H]
     \begin{adjustbox}{width={\textwidth}}
-        \begin{tabular}{|l|l|l|l|l|l|l|l|}
+        \begin{tabular}{|c|c|c|c|c|c|c|c|}
             \hline
-            Registration year & \textbf{Mileage} & Horsepower & Width (mm) & Length (mm) & Average mpg & Top speed (mph) & \textbf{Predicted price} \\ \hline
-            2017              & \textbf{60000}   & 135        & 2027       & 4284        & 49          & 116             & \textbf{16157}           \\\hline
-            2017              & \textbf{130000}  & 135        & 2027       & 4284        & 49          & 116             & \textbf{13828}           \\\hline
+            Registration year & \textbf{Mileage} & Horsepower & Width & Length & Average mpg & Top speed & \textbf{Predicted price} \\
+                              & \textbf{(mi)}    &            & (mm)  & (mm)   &             & (mph)     & \textbf{(£)}             \\ \hline
+            2017              & \textbf{60000}   & 135        & 2027  & 4284   & 49          & 116       & \textbf{16157}           \\\hline
+            2017              & \textbf{130000}  & 135        & 2027  & 4284   & 49          & 116       & \textbf{13828}           \\\hline
         \end{tabular}
     \end{adjustbox}
     \caption{Influence of mileage on recently registered cars}
@@ -23,33 +25,35 @@ result.
 \newline
 In particular the registration year, which, as shown before, strongly correlates with the target variable has an effect on the limited
 influence of the mileage here.
-Given the dataset's sampling of data up to 2017, both of the \ac{vw} Golfs in\autoref{mileage_data_new_car} have been first registered only one year ago, so the base price is measurably higher.
+Given the data set's sampling of data up to 2017, both of the \ac{vw} Golfs in \autoref{mileage_data_new_car} have been first registered only one year ago, so the base price is measurably higher.
 If you apply the same example to cars registered in 2010, which therefore have been running for seven years, the influence of the mileage grows.
 \begin{table}[H]
     \begin{adjustbox}{width={\textwidth}}
-        \begin{tabular}{|l|l|l|l|l|l|l|l|}
+        \begin{tabular}{|c|c|c|c|c|c|c|c|}
             \hline
-            \textbf{Registration year} & \textbf{Mileage} & Horsepower & Width (mm) & Length (mm) & Average mpg & Top speed (mph) & \textbf{Predicted price} \\ \hline
-            \textbf{2010}              & \textbf{60000}   & 135        & 2027       & 4284        & 49          & 116             & \textbf{11122}           \\\hline
-            \textbf{2010}              & \textbf{130000}  & 135        & 2027       & 4284        & 49          & 116             & \textbf{8793}           \\\hline
+            \textbf{Registration year} & \textbf{Mileage} & Horsepower & Width & Length & Average mpg & Top speed & \textbf{Predicted price} \\
+                                       & \textbf{(mi)}    &            & (mm)  & (mm)   &             & (mph)     & \textbf{(£)}             \\ \hline
+            \textbf{2010}              & \textbf{60000}   & 135        & 2027  & 4284   & 49          & 116       & \textbf{11122}           \\\hline
+            \textbf{2010}              & \textbf{130000}  & 135        & 2027  & 4284   & 49          & 116       & \textbf{8793}            \\\hline
         \end{tabular}
     \end{adjustbox}
-    \caption{Influence of mileage on older cars}
+    \caption{Influence of mileage on older cars.}
     \label{mileage_data_old_car}
 \end{table}
-As shown in \autoref{mileage_data_old_car}, the gap between the two otherwise identical vehicles has widened to 20.9 \%, a sharp increase by 45.2 \%.
-
-
+As shown in \autoref{mileage_data_old_car}, the gap between the two otherwise identical vehicles has widened to 20.9 \%, an increase by 45.2 \%.
+Potential reasons for the strong correlation between year and target value will be investigated further in \autoref{year_to_price_correlation}.
+Nevertheless, it can clearly be detected
 \subsection{Usage of example data}
 \begin{table}[H]
     \begin{adjustbox}{width={\textwidth}}
-        \begin{tabular}{|l|l|l|l|l|l|l|l|}
+        \begin{tabular}{|c|c|c|c|c|c|c|c|}
             \hline
-            Registration year & Mileage & Horsepower & Width (mm) & Length (mm) & Average mpg & Top speed (mph) & \textbf{Predicted price (£)} \\\hline
-            2014              & 180000  & 110        & 1799       & 4204        & 45          & 110             & \textbf{5601}                \\\hline
-            2016              & 150000  & 120        & 2027       & 4255        & 48          & 112             & \textbf{12130}               \\\hline
-            2018              & 80000   & 130        & 2027       & 4255        & 50          & 115             & \textbf{16136}               \\\hline
-            2015              & 190000  & 115        & 1799       & 4204        & 44          & 108             & \textbf{5819}                \\ \hline
+            Registration year & Mileage & Horsepower & Width & Length & Average mpg & Top speed & \textbf{Predicted price} \\
+                              & (mi)    &            & (mm)  & (mm)   &             & (mph)     & \textbf{(£)}             \\ \hline
+            2014              & 180000  & 110        & 1799  & 4204   & 45          & 110       & \textbf{5601}            \\\hline
+            2016              & 150000  & 120        & 2027  & 4255   & 48          & 112       & \textbf{12130}           \\\hline
+            2018              & 80000   & 130        & 2027  & 4255   & 50          & 115       & \textbf{16136}           \\\hline
+            2015              & 190000  & 115        & 1799  & 4204   & 44          & 108       & \textbf{5819}            \\ \hline
         \end{tabular}
     \end{adjustbox}
     \caption{Assessing model for business use cases}
@@ -63,5 +67,5 @@ As shown in \autoref{mileage_data_old_car}, the gap between the two otherwise id
 \subsection{Outliers}
 \subsubsection{Engine size $\leftrightarrow$ Price}
 \subsubsection{Width $\leftrightarrow$ Price}
-\subsubsection{Year $\leftrightarrow$ Price}
+\subsubsection{Year $\leftrightarrow$ Price} \label{year_to_price_correlation}
 TODO include example of higher influence of mileage the older the car is
