@@ -87,11 +87,32 @@ The improved performance is a reason, why customers are willing to spend extra f
 As with new vehicles, the direct relationship between horsepower and price also manifests in the pre-owned market, %TODO quelle dafür?
 with a correlation of 0.465.
 \subsection{Outliers}
-Nevertheless, there were also some outliers which ought to be investigated in more detail. 
+Nevertheless, there are also some outliers which ought to be investigated in more detail. 
 \subsubsection{Engine size $\leftrightarrow$ Price}
 The engine displacement, informally also referred to as engine size, describes the volume of air and fuel inside an engine's pistons \autocite{EngineDisplacement2024}
-and is measured in liters in the data set. 
-
+and is measured in liters in the data set.
+By definition, it is also related to its power output, in particular in older vehicles.
+\par
+Given that, the intuitive prediction is that it will positively correlate with the final price. 
+However, the analysis has shown that there the correlation is not significant, with -0.063 approaching 0.
+There are two main reasons for this. 
+\par
+Exploring the correlation of the engine size with other parameters, the lack of effect on the final price can be explained by looking at
+three key indicators:
+\begin{itemize}
+    \item \textbf{Top speed: }
+    With 0.552, there is a significant effect of the engine size on the top speed, increasing the predicted value of the Golf.
+    \item \textbf{Registration year: }
+    There is a measurable trend that for newer cars, the engines become smaller, notable by a coefficient of -0.295.
+    Due to the strong effect of the registration year on the predicted price, the higher engine sizes negatively influence the target value,
+    compensating the aforementioned effect of top speed.
+    \item \textbf{Horsepower: }
+    In newer cars, horsepower is not as limited by engine size as in the past \autocite{WhatEngineDisplacement}. 
+    Looking at the correlation value of -0.076, this effect is also resembled in VW Golfs. Thus, one of the factors determining the final price
+    is not 
+\end{itemize}
+To conclude, 
+The 
 \subsubsection{Width $\leftrightarrow$ Price}
 
 \subsubsection{Year $\leftrightarrow$ Price} \label{year_to_price_correlation}

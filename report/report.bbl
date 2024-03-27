@@ -50,6 +50,30 @@
       \verb https://en.wikipedia.org/w/index.php?title=Engine_displacement&oldid=1210756038
       \endverb
     \endentry
+    \entry{WhatEngineDisplacement}{online}{}
+      \list{organization}{1}{%
+        {Capital One Auto Navigator}%
+      }
+      \field{sortinit}{3}
+      \field{sortinithash}{a37a8ef248a93c322189792c34fc68c9}
+      \field{labeltitlesource}{title}
+      \field{abstract}{In an era of turbos and hybridization, the size of an engine doesn't tell you as much as it once did.}
+      \field{langid}{english}
+      \field{title}{What {{Is Engine Displacement}} and {{Does It Matter}}?}
+      \field{urlday}{27}
+      \field{urlmonth}{3}
+      \field{urlyear}{2024}
+      \field{urldateera}{ce}
+      \verb{file}
+      \verb C:\Users\momoh\Zotero\storage\7J537VPH\2055.html
+      \endverb
+      \verb{urlraw}
+      \verb https://www.capitalone.com/cars/learn/finding-the-right-car/what-is-engine-displacement-and-does-it-matter/2055
+      \endverb
+      \verb{url}
+      \verb https://www.capitalone.com/cars/learn/finding-the-right-car/what-is-engine-displacement-and-does-it-matter/2055
+      \endverb
+    \endentry
   \enddatalist
   \missing{IndustrieRoboterHirataEngineering}
 \endrefsection
