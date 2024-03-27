@@ -19,26 +19,39 @@
 
 \refsection{0}
   \datalist[entry]{none/global//global/global}
-    \entry{IndustrieRoboterHirataEngineering}{online}{}
-      \field{sortinit}{1}
-      \field{sortinithash}{50c6687d7fc80f50136d75228e3c59ba}
+    \entry{EngineDisplacement2024}{inreference}{}
+      \field{sortinit}{2}
+      \field{sortinithash}{ed39bb39cf854d5250e95b1c1f94f4ed}
       \field{labeltitlesource}{title}
-      \field{title}{Industrie-{{Roboter}} - {{Hirata Engineering Europe GmbH}}}
-      \field{urlday}{2}
-      \field{urlmonth}{2}
+      \field{abstract}{Engine displacement is the measure of the cylinder volume swept by all of the pistons of a piston engine, excluding the combustion chambers. It is commonly used as an expression of an engine's size, and by extension as an indicator of the power (through mean effective pressure and rotational speed) an engine might be capable of producing and the amount of fuel it should be expected to consume. For this reason displacement is one of the measures often used in advertising, as well as regulating, motor vehicles. It is usually expressed using the metric units of cubic centimetres (cc or cm3, equivalent to millilitres) or litres (l or L), or – particularly in the United States – cubic inches (CID, cu in, or in3).}
+      \field{annotation}{Page Version ID: 1210756038}
+      \field{booktitle}{Wikipedia}
+      \field{day}{28}
+      \field{hour}{5}
+      \field{langid}{english}
+      \field{minute}{38}
+      \field{month}{2}
+      \field{second}{45}
+      \field{timezone}{Z}
+      \field{title}{Engine Displacement}
+      \field{urlday}{27}
+      \field{urlmonth}{3}
       \field{urlyear}{2024}
+      \field{year}{2024}
+      \field{dateera}{ce}
       \field{urldateera}{ce}
       \verb{file}
-      \verb C:\Users\momoh\Zotero\storage\VKVHJPED\scara-roboter.html
+      \verb C:\Users\momoh\Zotero\storage\CHTFIX8S\Engine_displacement.html
       \endverb
       \verb{urlraw}
-      \verb https://www.hirata.de/de/produkte/scara-roboter
+      \verb https://en.wikipedia.org/w/index.php?title=Engine_displacement&oldid=1210756038
       \endverb
       \verb{url}
-      \verb https://www.hirata.de/de/produkte/scara-roboter
+      \verb https://en.wikipedia.org/w/index.php?title=Engine_displacement&oldid=1210756038
       \endverb
     \endentry
   \enddatalist
+  \missing{IndustrieRoboterHirataEngineering}
 \endrefsection
 \endinput
 
