@@ -95,6 +95,31 @@
       \verb https://www.auto-data.net/en/volkswagen-golf-model-896
       \endverb
     \endentry
+    \entry{DuelVWGolf}{online}{}
+      \list{organization}{1}{%
+        {ZePerfs}%
+      }
+      \field{sortinit}{5}
+      \field{sortinithash}{5dd416adbafacc8226114bc0202d5fdd}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{Duel between VW Golf V 1.6 FSi 115 PS and VW Golf VII 1.0 TSi 115 PS: head to head!}
+      \field{langid}{english}
+      \field{shorttitle}{Duel}
+      \field{title}{Duel: {{VW Golf V}} 1.6 {{FSi}} vs {{VW Golf VII}} 1.0 {{TSi}}}
+      \field{urlday}{29}
+      \field{urlmonth}{3}
+      \field{urlyear}{2024}
+      \field{urldateera}{ce}
+      \verb{file}
+      \verb C:\Users\momoh\Zotero\storage\4BZDP6BV\duel2995-5920.html
+      \endverb
+      \verb{urlraw}
+      \verb https://zeperfs.com/en/duel2995-5920.htm
+      \endverb
+      \verb{url}
+      \verb https://zeperfs.com/en/duel2995-5920.htm
+      \endverb
+    \endentry
   \enddatalist
   \missing{IndustrieRoboterHirataEngineering}
 \endrefsection
