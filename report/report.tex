@@ -22,20 +22,23 @@
 \usepackage{tikz}
 \usepackage{pgfplotstable}
 % \usepackage{pgf-pie}
-
+%TODO chapters upper case
 \include{colors}
 \include{format}
 \input{acronyms.tex} 
 \addbibresource{sources.bib}
 
 \begin{document}
-\include{content/coverletter}
+\includepdf{content/titlePage.pdf}
+% \include{content/coverletter}
 
 \tableofcontents
 \listoffigures
 \addcontentsline{toc}{chapter}{\listfigurename} %Abbildungsverzeichnis in table of content
 \listoftables
 \addcontentsline{toc}{chapter}{\listtablename} %Abbildungsverzeichnis in table of content
+
+%TODO add table of abbreviations
 
 \include{content/1}
 \include{content/2}
