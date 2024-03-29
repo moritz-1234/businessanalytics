@@ -1,30 +1,59 @@
 \chapter{Conclusion}
-\section{Further questions}
+\section{Limitations of the analysis}
+\subsection{Recency of the data}
+The training data has been collected between 2016 and 2017, thus even the most recent data
+is now over 6 years old. Given recent events such as the steep increase of inflation
+and the COVID-19 pandemic, predictions by the model might not accurately reflect current trends.
 
-
-\subsubsection{Lack of sales data regarding advertisement}
-While the given dataset included cohesive data regarding the advertisement price of cars in the used vehicle market,
+\subsection{Lack of sales data regarding advertisement}
+Additionally, while the given dataset includes conclusive data regarding the advertisement price of cars in the used vehicle market,
 there is no indicator given, whether the car was actually sold at the price that it has been advertised for. 
 \newline
-Nevertheless, while you can expect a few dealerships to over- / undershoot their prices,
-considering the scale of the dataset for the overall market you can expect that effect to even out.
-However, evaluating whether there is a trend that used cars are systematically under- / overpriced in advertisements
-is only possible if you compare the given advertisement data set to data containing real sales. %TODO verbessern
-\subsubsection{Inter-model comparison of findings}
+Nevertheless, while one may anticipate a few dealerships to over or underestimate their prices,
+considering the scale of the dataset, that effect levels out for the overall market.
+However, evaluating whether there is a trend that pre-owned cars are systematically under- / overpriced in commercials
+is only possible if you compare the given data set to real sales information.
 
-\subsubsection{Assess value depreciation}
-One possible further research topic is the comparison of a car's new price
-to its future advertisement prices. For each model in the used-car advertisement dataset, there is a corresponding data point
-that contains, among others, the \ac{msrp}. 
+\section{Further research topics}
+Given the scale of the available data, more potential research questions may also be examined. 
+
+\subsection{Inter-model comparison of findings}
+The analysis is currently only valid for the small subset of the data including the \ac{vw} Golf. 
+To elevate generalizability to the whole used vehicle market and to assess potential disparities as well as similarities among
+car models, expanding the scope to the entirety of available data is recommended.  
+\subsection{Assess value depreciation}
+After evaluating inter-model differences, a possible further research topic is the comparison of each car's new price
+to its future advertisement prices. For each model in the advertisement dataset, there is a corresponding data point
+in the "basic information" table that contains, among others, the \ac{msrp}. 
 \newline
-Given that information, the following questions could be analyzed: 
+With that information, the following questions could be analyzed: 
 \begin{itemize}
 \item Which model retains the most value compared to its \ac{msrp}?
 \item Given five years of use, which car's price decreased the most?
-\item Is there a correlation between value depreciation and the manufacturer of the car? 
+\item Is there a correlation between value depreciation and the manufacturer of the car?
 \end{itemize}
-This information can be useful to customers considering the purchase of a new car in order to assess its potential resale value in the future.
-
+This information can be useful for customers considering the purchase of a new car in order to assess its potential resale value in the future.
 
 \section{Résumé}
-   
+
+The conducted analysis provides a data-driven approach to the business problem of a competitive advertisement price of a given \ac{vw} Golf.
+After preparing the raw data, key influences have been separated using Pearson-correlation and used to train a linear regression model.
+\par
+Considering the parameters 
+\begin{itemize}
+    \item Registration year
+    \item Mileage (mi)
+    \item Horsepower
+    \item Width (mm)
+    \item Length (mm)
+    \item Average mpg
+    \item Top speed (mph)
+\end{itemize}
+it accurately predicts a suitable advertisement price with $R^2 = 0.927$, solving the business problem thereby.
+The end results mostly align with logical assumptions, for instance that newer cars sell for higher prices, yet also reveal
+surprising behaviors such as the significant effect of the Golf's width.
+To summarize, they provide further insight by revealing each factor's contribution to the vehicle's advertisement price and investigating their cause.
+\par
+Given those results, further potential research areas are examined and left open for future analysis. 
+
+
