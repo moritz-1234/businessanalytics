@@ -74,6 +74,27 @@
       \verb https://www.capitalone.com/cars/learn/finding-the-right-car/what-is-engine-displacement-and-does-it-matter/2055
       \endverb
     \endentry
+    \entry{VolkswagenGolfTechnical}{online}{}
+      \field{sortinit}{4}
+      \field{sortinithash}{e071e0bcb44634fab398d68ad04e69f4}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Volkswagen Golf | Technical Specs, Fuel consumption, Dimensions, Power, Maximum speed, Torque, Acceleration 0 - 100 km/h, Engine displacement, Drive wheel, Tires size, Body type, Doors, Seats}
+      \field{langid}{english}
+      \field{title}{Volkswagen {{Golf}} | {{Technical Specs}}, {{Fuel}} Consumption, {{Dimensions}}}
+      \field{urlday}{29}
+      \field{urlmonth}{3}
+      \field{urlyear}{2024}
+      \field{urldateera}{ce}
+      \verb{file}
+      \verb C:\Users\momoh\Zotero\storage\GHYPQXGB\volkswagen-golf-model-896.html
+      \endverb
+      \verb{urlraw}
+      \verb https://www.auto-data.net/en/volkswagen-golf-model-896
+      \endverb
+      \verb{url}
+      \verb https://www.auto-data.net/en/volkswagen-golf-model-896
+      \endverb
+    \endentry
   \enddatalist
   \missing{IndustrieRoboterHirataEngineering}
 \endrefsection
