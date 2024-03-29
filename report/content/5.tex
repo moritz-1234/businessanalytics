@@ -15,16 +15,16 @@ However, evaluating whether there is a trend that pre-owned cars are systematica
 is only possible if you compare the given data set to real sales information.
 
 \section{Further research topics}
-Given the scale of the available data, more potential research questions may be examined. 
+Given the scale of the available data, more potential research questions may also be examined. 
 
 \subsection{Inter-model comparison of findings}
-Additionally, the analysis is currently only valid for the small subset of the data including \ac{vw} Golf. 
+The analysis is currently only valid for the small subset of the data including the \ac{vw} Golf. 
 To levitate generalizability to the whole used vehicle market and to assess potential disparities as well as similarities in between 
-car models, expanding the scope to the entirety of available data is obligatory.  
+car models, expanding the scope to the entirety of available data is recommended.  
 \subsection{Assess value depreciation}
 Having inter-model differences evaluated, a possible further research topic is the comparison of each car's new price
 to its future advertisement prices. For each model in the advertisement dataset, there is a corresponding data point
-in the basic information table that contains, among others, the \ac{msrp}. 
+in the "basic information" table that contains, among others, the \ac{msrp}. 
 \newline
 Given that information, the following questions could be analyzed: 
 \begin{itemize}
@@ -36,9 +36,8 @@ This information can be useful for customers considering the purchase of a new c
 
 \section{Résumé}
 
-The conducted analysis provides a data driven solution to the business problem of a competitive advertisement price of a given \ac{vw} Golf.
-After preparing the raw data, key influences have been separated using Pearson-correlation and used to train a linear regression model to
-predict a suitable advertisement price.
+The conducted analysis provides a data-driven approach to the business problem of a competitive advertisement price of a given \ac{vw} Golf.
+After preparing the raw data, key influences have been separated using Pearson-correlation and used to train a linear regression model.
 \par
 Considering the parameters 
 \begin{itemize}
@@ -50,10 +49,11 @@ Considering the parameters
     \item Average mpg
     \item Top speed (mph)
 \end{itemize}
-the model accurately predicts a suitable advertisement price with $R^2 = 0.927$, solving the business problem therewith.
-The end results align with logical assumptions, for instance that newer cars sell for higher prices.
-Nonetheless, they provide further insight by revealing each factor's contribution to the total amount.
+it accurately predicts a suitable advertisement price with $R^2 = 0.927$, solving the business problem therewith.
+The end results mostly align with logical assumptions, for instance that newer cars sell for higher prices, yet also reveal
+surprising behaviors such as the strong effect of the width of a car on the outcome.
+To summarize, they provide further insight by revealing each factor's contribution to the total amount.
 \par
-Provided that outcome, further potential research areas are examined and left open for future analysis. 
+Given those results, further potential research areas are examined and left open for future analysis. 
 
 
