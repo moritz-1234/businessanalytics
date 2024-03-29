@@ -69,6 +69,10 @@ Thus, he does not have to rely solely on human estimate but can instead decide b
 \section{Findings}
 In \autoref{model_usage_section} the application of the model to exemplary vehicles has been demonstrated.
 Here, some trends that could have already been anticipated after the correlation analysis, have emerged more clearly.
+\subsection{Horsepower $\leftrightarrow$ Price}
+Among the essential specifications of a vehicle is its power, measured in horsepower, significantly influencing price with a correlation coefficient of 0.465.
+It affects the maximum acceleration, the top speed, the fuel consumption and other key indicators of a car's capabilities.
+The improved performance is a reason why customers are willing to spend extra for a more powerful Golf.
 \subsection{Mileage $\leftrightarrow$ Price}
 Mileage as a parameter can be seen as an indicator for wear of the vehicle.
 Apart from that, maintenance parts are closer to their end of life and need to be replaced sooner,
@@ -98,18 +102,15 @@ which costs customers money and time.
     \caption{Effect of mileage on price}
     \label{mileagepricediagram}
 \end{figure}
-Looking at the data in \autoref{mileagepricediagram}, it can be seen that there is a steep decline of the vehicle's value in the beginning up to $\approx$ 50000 miles,
-with the effect of mileage on the price notably decreasing from $\approx$ 100000 mi onwards.
+Looking at the data in \autoref{mileagepricediagram}, it can be seen that there is a steep decline of the vehicle's value in the beginning up to about 50000 miles,
+with the effect of mileage on the price notably decreasing from roughly 100000 mi onwards.
 A potential reason for this could be that once vehicles reach certain thresholds, most of the common maintenance has already been executed, so
 a high distance travelled becomes an indicator of the car's reliability, countering the diminishing effect on the price to a certain extent.
 \par
 This also means that the relationship between the two markers, resembling the arm of a parabola, is not clearly following a linear trend, therefore making it difficult to fully explain with
 the linear Pearson correlation only.
 Nevertheless, its negative value of -0.304 is in line with predictions, albeit not as strong.
-\subsection{Horsepower $\leftrightarrow$ Price}
-Among the essential specifications of a vehicle is its power, measured in horsepower, significantly influencing price with a correlation coefficient of 0.465.
-It affects the maximum acceleration, the top speed, the fuel consumption and other key indicators of a car's capabilities.
-The improved performance is a reason why customers are willing to spend extra for a more powerful Golf.
+
 \subsection{Engine size $\leftrightarrow$ Price}
 The engine displacement, informally also referred to as engine size, describes the volume of air and fuel inside an engine's pistons \autocite{EngineDisplacement2024}
 and is measured in liters in the data set.
@@ -133,7 +134,8 @@ three key indicators:
           is not related to the engine size.
 \end{itemize}
 To conclude, the two measurable effects even each other out and for the horsepower, where correlation might be present, there is not any, unexpectedly rendering the
-engine size negligible for our analysis. 
+engine size negligible for the analysis. 
+
 \subsection{Width $\leftrightarrow$ Price}
 At the first glance, a very strong tie between the width of a Golf and its advertisement price is not clear.
 From a potential customer's perspective, the width of a car can be a deciding factor, for example when it comes to
@@ -148,6 +150,7 @@ while the current 8th generation's width is already 1789 mm \autocite{Volkswagen
 \par
 Overall, there is a clear trend observable that in line with the registration year, the width increases,
 resulting in the unforeseen correlation of 0.715.
+
 \subsection{Year $\leftrightarrow$ Price} \label{year_to_price_correlation}
 As expected, there is a relationship in between the registration year of the car and the final price.
 However, its strength with 0.842 is unprecedented and can not solely be clarified by the analyzed data.
