@@ -1,8 +1,8 @@
-\chapter{Findings and discussion}
+\chapter{Results}
 \section{Model usage}\label{model_usage_section}
 After examining the theoretical background of the regression model, it can be applied to example data to investigate its behavior.
 \subsection{Assessing expectations}
-Intuitive assumptions draw you to the conclusion that the vehicle's mileage has an inverse relationship to the predicted advertisement price.
+Intuitively, the vehicle's mileage should have an inverse relationship to the predicted advertisement price.
 To evaluate if the model also follows this behavior, it was applied to manually created data differentiating only by mileage.
 \begin{table}[H]
     \begin{adjustbox}{width={\textwidth}}
@@ -25,9 +25,9 @@ result.
 \newline
 In particular the registration year, which, as shown before, strongly correlates with the target variable, has an effect on the limited
 influence of the mileage here.
-Given the data set's sampling of data up to 2017, both of the \ac{vw} Golfs in \autoref{mileage_data_new_car} have been first registered very recently,
+Given the data set's sampling of data up to 2018, both of the \ac{vw} Golfs in \autoref{mileage_data_new_car} have been first registered very recently,
 thus the base price is higher.
-If the same example is applied to cars registered in 2010, which therefore have been running for seven years, the influence of the mileage grows.
+If the same example is applied to cars registered in 2010, the influence of the mileage grows.
 \begin{table}[H]
     \begin{adjustbox}{width={\textwidth}}
         \begin{tabular}{|c|c|c|c|c|c|c|c|}
@@ -46,8 +46,8 @@ Potential reasons for the strong correlation between year and target value will 
 Nevertheless, for that small subset of data, the efficacy of the model is evident.
 \subsection{Usage of example data}
 However, this small example is not cohesive enough to demonstrate the ability to solve the overall business problem.
-To apply the model to a day-to-day use case as it regularly appears in a dealership, it was used to predict the advertisement price
-of four automobiles for demonstration purposes.
+To apply the model to a day-to-day use case as it regularly appears in a dealership,
+it was used to predict the advertisement price of four automobiles.
 \begin{table}[H]
     \begin{adjustbox}{width={\textwidth}}
         \begin{tabular}{|c|c|c|c|c|c|c|c|}
@@ -65,18 +65,22 @@ of four automobiles for demonstration purposes.
 \end{table}
 \autoref{predicted_price_realworld_data} illustrates that the model is able to set a competitive advertisement price
 for a \ac{vw} Golf. As its performance with $R^2 = 0.927$ is very good, it can be seen as a reliable source of information for the dealer.
-Thus, he does not have to rely solely on human estimate but can instead decide based on a data driven prediction.
+Thus, he does not have to rely solely on human estimate but can instead decide based on a data driven prediction, solving research question two therewith. 
 \section{Findings}
 In \autoref{model_usage_section} the application of the model to exemplary vehicles has been demonstrated.
 Here, some trends that could have already been anticipated after the correlation analysis, have emerged more clearly.
-\newline
-These trends that have been found regarding the model and the underlying data can be divided into two groups, the predicted and the unexpected.
-\subsection{Consistent with expectations}
-In this first part, the findings which can be considered logical or self-evident will be discussed.
-\subsubsection{Mileage $\leftrightarrow$ Price}
+\subsection{Correlation: Horsepower, Price}
+\label{subsectionhpprice}
+Among the essential specifications of a vehicle is its power, measured in horsepower, significantly influencing price with a correlation coefficient of 0.465.
+It affects the maximum acceleration, the top speed, the fuel consumption and other key indicators of a car's capabilities.
+The improved performance is a reason why customers are willing to spend extra for a more powerful Golf.
+\subsection{Correlation: Mileage, Price}
 Mileage as a parameter can be seen as an indicator for wear of the vehicle.
 Apart from that, maintenance parts are closer to their end of life and need to be replaced sooner,
 which costs customers money and time.
+\par
+Looking at the data in a scatter-plot in \autoref{mileagepricediagram}, it can be seen that there is a steep decline of the vehicle's value in the beginning up to about 50000 miles,
+with the effect of mileage on the price notably decreasing from roughly 100000 mi onwards.
 \begin{figure}[H]
     \begin{tikzpicture}
         \begin{axis}[
@@ -102,24 +106,17 @@ which costs customers money and time.
     \caption{Effect of mileage on price}
     \label{mileagepricediagram}
 \end{figure}
-Looking at the data in \autoref{mileagepricediagram}, it can be seen that there is a steep decline of the vehicle's value in the beginning up to $\approx$ 50000 miles,
-with the effect of mileage on the price notably decreasing from $\approx$ 100000 mi onwards.
+
 A potential reason for this could be that once vehicles reach certain thresholds, most of the common maintenance has already been executed, so
 a high distance travelled becomes an indicator of the car's reliability, countering the diminishing effect on the price to a certain extent.
 \par
-This also means that the relationship between the two markers, resembling the arm of a parabola, is not clearly following a linear trend, therefore making it difficult to fully explain with
-the linear Pearson correlation only.
-Nevertheless, its negative value of -0.304 is in line with predictions, albeit not as strong.
-\subsubsection{Horsepower $\leftrightarrow$ Price}
-Among the essential specifications of a vehicle is its power, measured in horsepower, significantly influencing price with a correlation coefficient of 0.465.
-It affects the maximum acceleration, the top speed, the fuel consumption and other key indicators of a car's capabilities.
-The improved performance is a reason why customers are willing to spend extra for a more powerful Golf.
-\subsection{Outliers}
-Nevertheless, there are also some outliers which ought to be investigated in more detail.
-\subsubsection{Engine size $\leftrightarrow$ Price}
-The engine displacement, informally also referred to as engine size, describes the volume of air and fuel inside an engine's pistons \autocite{EngineDisplacement2024}
-and is measured in liters in the data set.
-By definition, it is also related to its power output, in particular in older vehicles.
+This also means that the relationship between the two markers, resembling the arm of a parabola and therefore a polynomial function,
+gives the linear Pearson correlation only limited meaningfulness.
+Nevertheless, its negative coefficient of -0.304 is in line with predictions, albeit not as strong.
+
+\subsection{Correlation: Engine size, Price}
+The engine displacement, informally also referred to as engine size, describes the volume of air and fuel inside an engine's pistons \autocite{EngineDisplacement2024}.
+By definition, it is also directly related to its power output, in particular in older vehicles.
 \par
 Given that, the intuitive prediction is that it will positively correlate with the final price.
 However, the analysis has shown it is not significant, with the coefficient of -0.063 approaching 0.
@@ -135,12 +132,13 @@ three key indicators:
           compensating the aforementioned effect of top speed.
     \item \textbf{Horsepower: }
           In newer cars, horsepower is not as limited by engine size as in the past \autocite{WhatEngineDisplacement}.
-          Looking at the correlation value of -0.076, this effect is also resembled in VW Golfs. Thus, one of the deciding factors determining the end price
-          is not related to the engine size.
+          Looking at the correlation value of -0.076, this effect is also resembled in VW Golfs. Thus, as shown in \autoref{subsectionhpprice}, one of the deciding factors determining the end price 
+          is not related to the engine size for \ac{vw} Golf.
 \end{itemize}
 To conclude, the two measurable effects even each other out and for the horsepower, where correlation might be present, there is not any, unexpectedly rendering the
-engine size negligible for our analysis. 
-\subsubsection{Width $\leftrightarrow$ Price}
+engine size negligible for the analysis.
+
+\subsection{Correlation: Width, Price}
 At the first glance, a very strong tie between the width of a Golf and its advertisement price is not clear.
 From a potential customer's perspective, the width of a car can be a deciding factor, for example when it comes to
 narrow parking spots and small neighborhood roads.
@@ -155,10 +153,10 @@ while the current 8th generation's width is already 1789 mm \autocite{Volkswagen
 Overall, there is a clear trend observable that in line with the registration year, the width increases,
 resulting in the unforeseen correlation of 0.715.
 
-\subsubsection{Year $\leftrightarrow$ Price} \label{year_to_price_correlation}
+\subsection{Correlation: Year, Price} \label{year_to_price_correlation}
 As expected, there is a relationship in between the registration year of the car and the final price.
 However, its strength with 0.842 is unprecedented and can not solely be clarified by the analyzed data.
-The main reason for this is the absence of the exact model generation (Golf V, Golf VI, Golf VII...), as well as its respective base price, in the data.
+The main reason for this is the absence of the exact model generation (Golf V, Golf VI, Golf VII...), as well as its respective \ac{msrp}, in the data.
 Nonetheless, it can be assumed that year of registration is approximately equal to the manufacturing date and therefore also to the model.
 \par
 As prices have risen between the model generations, for instance a 16.3 \% price increase happened between comparable models of Golf V and Golf VII \autocite{DuelVWGolf},
@@ -166,7 +164,7 @@ it can be expected that this trend is reflected in advertisement prices as well.
 Additionally, newer cars include more optional features which can drive up the price if they are present.
 If this affects the price in the given case cannot be checked using the available data,
 as there is no notice of a car's selected options.
-\newline
+\par
 To add to that, there might also be differences in a car's maintenance cost and reliability depending on the exact model, manifesting in price differences in pre-owned vehicles.
 Newer models can also contain more innovations, whose absence can make older vehicles  disproportionately less attractive, with features such as air conditioning, heated seats,
 navigation and more being considered standard nowadays.
