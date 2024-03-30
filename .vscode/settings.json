@@ -9,4 +9,7 @@
         },
         "ltex.language": "en-US",
         "latex-workshop.latex.autoClean.run": "onBuilt",
+        "latex-workshop.latex.autoBuild.cleanAndRetry.enabled": false,
+        "latex-workshop.latex.autoBuild.run": "never"
+
     }
