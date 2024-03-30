@@ -2,7 +2,7 @@
 \section{Model usage}\label{model_usage_section}
 After examining the theoretical background of the regression model, it can be applied to example data to investigate its behavior.
 \subsection{Assessing expectations}
-Intuitively, the vehicle's mileage has an inverse relationship to the predicted advertisement price.
+Intuitively, the vehicle's mileage should have an inverse relationship to the predicted advertisement price.
 To evaluate if the model also follows this behavior, it was applied to manually created data differentiating only by mileage.
 \begin{table}[H]
     \begin{adjustbox}{width={\textwidth}}
@@ -66,6 +66,7 @@ of four automobiles for demonstration purposes.
 \autoref{predicted_price_realworld_data} illustrates that the model is able to set a competitive advertisement price
 for a \ac{vw} Golf. As its performance with $R^2 = 0.927$ is very good, it can be seen as a reliable source of information for the dealer.
 Thus, he does not have to rely solely on human estimate but can instead decide based on a data driven prediction.
+%TODO research question 2?
 \section{Findings}
 In \autoref{model_usage_section} the application of the model to exemplary vehicles has been demonstrated.
 Here, some trends that could have already been anticipated after the correlation analysis, have emerged more clearly.
@@ -77,6 +78,8 @@ The improved performance is a reason why customers are willing to spend extra fo
 Mileage as a parameter can be seen as an indicator for wear of the vehicle.
 Apart from that, maintenance parts are closer to their end of life and need to be replaced sooner,
 which costs customers money and time.
+Looking at the data in a scatter-plot in \autoref{mileagepricediagram}, it can be seen that there is a steep decline of the vehicle's value in the beginning up to about 50000 miles,
+with the effect of mileage on the price notably decreasing from roughly 100000 mi onwards.
 \begin{figure}[H]
     \begin{tikzpicture}
         \begin{axis}[
@@ -102,14 +105,13 @@ which costs customers money and time.
     \caption{Effect of mileage on price}
     \label{mileagepricediagram}
 \end{figure}
-Looking at the data in \autoref{mileagepricediagram}, it can be seen that there is a steep decline of the vehicle's value in the beginning up to about 50000 miles,
-with the effect of mileage on the price notably decreasing from roughly 100000 mi onwards.
+
 A potential reason for this could be that once vehicles reach certain thresholds, most of the common maintenance has already been executed, so
 a high distance travelled becomes an indicator of the car's reliability, countering the diminishing effect on the price to a certain extent.
 \par
-This also means that the relationship between the two markers, resembling the arm of a parabola, is not clearly following a linear trend, therefore making it difficult to fully explain with
-the linear Pearson correlation only.
-Nevertheless, its negative value of -0.304 is in line with predictions, albeit not as strong.
+This also means that the relationship between the two markers, resembling the arm of a parabola and therefore a polynomial function,
+gives the linear Pearson correlation only limited meaningfulness. 
+Nevertheless, its negative coefficient of -0.304 is in line with predictions, albeit not as strong.
 
 \subsection{Engine size $\leftrightarrow$ Price}
 The engine displacement, informally also referred to as engine size, describes the volume of air and fuel inside an engine's pistons \autocite{EngineDisplacement2024}
