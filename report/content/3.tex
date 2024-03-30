@@ -1,30 +1,28 @@
-\chapter{Methodology}
+\chapter{Analysis}
 \section{Analyzation method}
-As the goal is to make a data driven decision on how much a \ac{vw} Golf arriving at the dealership should be advertised for, linear regression is a fitting method to
-get a model for the price determination. After getting the car's specifications as inputs it calculates the price based on actual data of past advertisements.
+The goal is to make a data driven decision on how much a \ac{vw} Golf arriving at the dealership should be advertised for
+based on the car's specifications, assuming there is some kind of dependence.
+To check whether this dependence is given, the correlations between the specifications and the price are evaluated.
+After that, to get a model which predicts the price based on the other attributes, linear regression is used.
+Its simplicity when it comes to understanding and calculating the model as well as interpreting the results make it fitting
+for this use case.    
 
 \section{Data processing}
-\subsection{Preprocessing}
+\subsection{Preprocessing in \ac{excel}}
 First step of preprocessing the data is the reduction to only data points with value \enquote{\ac{vw} Golf} for the car model attribute. Therefore, the \ac{csv} file containing the raw data is
 imported into \ac{excel} and a filter to the car model column is applied. As some cells are blank for certain attributes, another filter removing the affected rows is set for every column. 
 
 \subsection{Preparations for Orange}
 After the previous steps the data set is still not ready to be processed in Orange. The problem is that certain cells not only contain the actual numeric value but also the 
 unit. For example the column of the car's average \ac{mpg} always has the text \enquote{mpg} after the value, causing Orange to not recognize it as 
-numeric value. To fix this issue the first approach is replacing the unit with blank text using the \enquote{Find and replace} functionality in \ac{excel}. But right after
-the text is replaced, \ac{excel} is converting some values to dates even if the cell format is set number. An example is the value 25.4 which is converted to
-\enquote{25. Apr}.
-\par
-The second approach to remove the units is opening the \ac{csv} file with a text editor and use its \enquote{Find and replace} functionality. This is working as the texts,
+numeric value. To fix this issue the \ac{csv} file is opened in a text editor and its \enquote{Find and replace} functionality is used to replace the unit with blank text.
+This is working as the texts,
 which have to be removed, only appear in two other places, where they are manually added back. So both the \enquote{mpg} from the average \ac{mpg} column and the \enquote{L}
 from the engine size column were removed like this.
 
 \subsection{Processing in Orange}
 \subsubsection{Correlations with the price attribute}
-To understand how each attribute affects the car's price, the correlations are calculated using the Pearson correlation coefficient. The result is a value between -1 and 1 for
-each attribute. The closer an attribute's value is to 0, the less influence it has on the price. A horizontal bar chart is used to visualize the correlations, because it
-offers enough 
-
+To understand how each attribute affects the car's price, the correlations are calculated using the Pearson correlation coefficient. 
 \begin{figure}[h]
     \begin{tikzpicture}
         \begin{axis}[
@@ -67,26 +65,38 @@ offers enough
     \caption{Correlation with the price attribute}
     \label{fig:correlationdiagram}
 \end{figure}
-
-\autoref{fig:correlationdiagram} shows the results which include both positive and negative correlation. Positive correlation means that if the value of attribute 1
-increases, the value of attribute 2 does as well. A logical example is the engine power, as it makes sense that a more powerful car sells for a higher price. On the other hand
-negative correlation describes the opposite. A higher mileage results in a lower price as it indicates higher wear.
 \par
-In the figure the attributes are listed from the highest to the least influence on the price. As the ones marked in color orange do not really have an affect, they are removed from
-the data set and only those highlighted in green are kept.
+\autoref{fig:correlationdiagram} shows a horizontal bar chart visualizing the correlation coefficient for each attribute.
+As a bar chart lists the different values of the coefficients side-to-side and in an easy-to-read way, it is perfect for the 
+given purpose of focusing on comparison between the attributes. 
+The horizontal layout allows good readability for the long labels and is more fitting to put the actual values next to the
+bars as there are no space limitations along the y-axis. 
+\par
+Having the results of the correlation analysis allows to answer the first research question: \enquote{What factors influence Volkswagen Golf's price the most?}.
+\autoref{fig:correlationdiagram} provides the answer as the attributes are listed from highest to lowest influence on the price. Those highlighted in the color green
+have an eminent impact, while the rest doesn't. Therefore, those highlighted in the color orange are not taken into account for the further data analysis.
 
-\subsubsection{Removing attributes and setting target}
+\subsubsection{Removing attributes \& Setting target}
 In the next step not only the attributes with low correlation, but also the non-numeric ones are removed. This is the case as they can't be used in the calculation
-of the linear regression model without further preprocessing and because the model is good enough already without them. Additionally, the price is set as 
-target value, which is required for the linear regression module in Orange.
+of the linear regression model without further preprocessing. These additional preprocessing steps are not performed as the resulting linear regression
+model already is very good and, therefore it is not worth the extra effort. 
+Additionally, the price is set as target value for the linear regression calculation.
 
-\subsubsection{Dividing data set and Calculating Linear Regression}
+\subsubsection{Dividing data set \& Calculating linear regression}
+As a final step the data set is split into training and test data and the linear regression model is calculated based on the
+training data. Insights about the training split as well as quality and specifications of the model are discussed in the next section of the report. 
 
-
-\section{Linear Regression Model}
-\subsection{Results}
+\section{Linear regression model}
+\subsection{Specifications}
+For the calculation of the linear regression model a training split of 60\% training and 40\% test data is used.
+When testing the model the results are very satisfactory with a mean squared error of 3750250.922 and ${r}^2$ of 0.912.
+Especially the ${r}^2$ being very close to 1 means a high linear relationship between the model and the target attribute,
+which means that the model predicts the price accurate.
 
 \subsection{Visualization}
+The reason for visualizing the linear regression model is that it is always easier to analyze and interpret visual 
+results rather than only working with numeric values.
+Used for that matter is a scatter plot shown in \autoref{fig:linearregressiondiagram}. 
 \begin{figure}[h]
     \begin{tikzpicture}
         \begin{axis}[
@@ -108,7 +118,7 @@ target value, which is required for the linear regression module in Orange.
         \addplot [mark=none,color=blue,style=very thick]
           table [y={create col/linear regression={y=model_price}}, col sep=comma] {./other/Linear_regression.csv};
           \addlegendentry{Regression line}  
-          \addplot [mark=*,color=red,only marks]
+          \addplot [mark=*,color=red,only marks, fill opacity = 0.35, draw opacity = 0]
           table [x=actual_price, y=model_price, col sep=comma] {./other/Linear_regression.csv};
                  
         \end{axis}
@@ -116,3 +126,10 @@ target value, which is required for the linear regression module in Orange.
     \caption{Plotted Linear Regression Model}
     \label{fig:linearregressiondiagram}
 \end{figure}
+\par
+Scatter plots are optimal to show the relationship between two variables, in this case the actual price from the test data 
+and the price predicted by the linear regression model. The closer the data points are to the regression line, the 
+better the model performs. By knowing this, it is easy to analyze the quality of the model even without any prior knowledge.
+So when looking at \autoref{fig:linearregressiondiagram}, one can see that the data points portray the regression line 
+quite precisely. This reinforces the prior statement, that the linear regression model is very good.
+
