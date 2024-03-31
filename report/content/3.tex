@@ -21,7 +21,6 @@ which have to be removed, only appear in two other places, where they are manual
 from the engine size column were removed like this.
 
 \subsection{Processing in Orange}
-\subsubsection{Correlations with the price attribute}
 To understand how each attribute affects the car's price, the correlations are calculated using the Pearson correlation coefficient. 
 \begin{figure}[h]
     \begin{tikzpicture}
@@ -76,13 +75,13 @@ Having the results of the correlation analysis allows to answer the first resear
 \autoref{fig:correlationdiagram} provides the answer, as the attributes are listed from highest to lowest influence on the price. Those highlighted in green
 have a significant impact, while the rest do not. Therefore, those highlighted in orange are not taken into account for the further data analysis.
 
-\subsubsection{Removing attributes \& Setting target}
+\par
 In the next step, not only the attributes with low correlation but also the non-numeric ones are removed. This is the case as they can't be used in the calculation
 of the linear regression model without further preprocessing. These additional preprocessing steps are not performed as the resulting linear regression
 model is already very good. 
 Additionally, the price is set as target value for the linear regression calculation.
 
-\subsubsection{Dividing data set \& Calculating linear regression}
+\par
 As a final step, the data set is split into training and test data, and the linear regression model is calculated based on the
 training data. Insights about the training split, as well as quality and specifications of the model, are discussed in the next section of the report. 
 
