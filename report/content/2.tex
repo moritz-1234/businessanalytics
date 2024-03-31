@@ -1,32 +1,26 @@
 \chapter{Theoretical background}
 \section{Correlation}
 
-In simple terms, a correlation coefficient shows if two variables are dependent.
-The correlation coefficient varies from -1 to 1. The closer it is to extreme values, the stronger the variables are related. If the correlation coefficient is positive, that means that variables move in the same direction; for instance, when demand is growing, prices are increasing, and if demand decreases, prices go down as well. A negative correlation shows the opposite relationship. For example, when supply rises, prices drop, and vice versa. The correlation of 0 indicates that variables are independent \autocite{DaCostaLewis2005}.
+In simple terms, a correlation coefficient shows if two variables are dependent. The correlation coefficient varies from -1 to 1. The closer it is to extreme values, the stronger the variables are related. If the correlation coefficient is positive, that means that variables move in the same direction; for instance, when demand is growing, prices are increasing, and if demand decreases, prices go down as well. A negative correlation shows the opposite relationship. For example, when supply rises, prices drop, and vice versa. The correlation of 0 indicates that variables are independent \autocite{DaCostaLewis2005}.
+There are various types of correlations. Pearson and Spearman are two of the most common correlations. It is a measure of strength and direction of linear relationship in data with normally distributed values. Alternatively, Spearman correlation is used to analyze data that is non-normally distributed
+\autocite{schoberCorrelationCoefficientsAppropriate2018}.
 
 \section{Linear regression}
 
-Linear regression is a statistical tool that helps to predict the value of a targeted dependent variable based on other attributes.
-An important measure in linear regression analysis is the coefficient of determination.
-It represents the percentage of cases where the change in an independent variable can be explained by the change in a dependent one.
-The coefficient of determination varies between 0 and 1.
-The closer it is to 1, the stronger the linear relationship between variables \autocite{kumariLinearRegressionAnalysis2018}.
+Linear regression is a statistical tool that helps to predict the value of a targeted dependent variable based on other attributes. An important measure in linear regression analysis is the \ac{r2}. It represents the percentage of cases where the change in an independent variable can be explained by the change in a dependent one. The \ac{r2} varies between 0 and 1. The closer it is to 1, the stronger the linear relationship between variables
+\autocite{kumariLinearRegressionAnalysis2018}.
+\ac{mse} is another vital measure to consider. It displays the difference between predicted and actual values in a regression model, as well as how much predictions change across different data sets. The smaller the MSE, the more accurate and reliable the predicted values are
+\autocite{Schluchter2005}.
 \section{Data}
 We explored a large-scale dataset for automotive applications which originally consisted of 7 files:
 \begin{itemize}
     \item "Ad\_table": Contained information about more than 0.25 million used car advertisements
-    \item "Ad\_table (extra)":
+    \item "Ad\_table (extra)": “Ad\_table” information with additional car characteristics
     \item "Basic\_table": information about car attributes
     \item "Image\_table": car images attributes
     \item “Price\_table”: entry-level new car prices for 1998-2021
     \item “Sales\_table”: ten years car sales data in UK
     \item “Trim\_table”: trim attributes including the engine type and engine size
 \end{itemize}
-For our research purposes, we used “Ad\_table (extra)”.
-It shows data about used car advertisements for more than 80 different car brands in 2016-2018.
-The dataset contains information about cars' maker and models, month and year of the advertisement,
-cars' year of registration, body type, color, ran miles, engine size in liters, and engine power in horsepower,
-gearbox (automatic, annual, semi-annual), fuel type (diesel, electric, hybrid petrol/electric plug in, petrol),
-the price and annual tax in pounds, wheelbase in millimeters, cars dimensions:
-height, width, and length in millimeters; average miles per gallon; top speed in miles per hour; the number of seats and doors.
-In addition, there were attributes for model ID and advertisement ID \autocite{huangDVMCARLargescaleAutomotive2022}.
+“Ad\_table (extra)” was used for the research purposes. It shows data about used car advertisements for more than 80 different car brands in 2016-2018. The dataset contains information about cars' maker and models, month and year of the advertisement, cars' year of registration, body type, color, ran miles, engine size in liters, and engine power in horsepower, gearbox (automatic, manual, semi-automatic), fuel type (diesel, electric, hybrid petrol/electric plug in, petrol), the price and annual tax in pounds, wheelbase in millimeters, cars dimensions: height, width, and length in millimeters; average miles per gallon; top speed in miles per hour; the number of seats and doors. In addition, there are attributes for model ID and advertisement ID
+\autocite{huangDVMCARLargescaleAutomotive2022}.
