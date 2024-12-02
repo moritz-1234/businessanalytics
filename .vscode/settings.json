@@ -1,15 +1,15 @@
 {
     "files.exclude": {
-        "**/*.aux": true,
-        "**/*.fdb_latexmk": true,
-        "**/*.fls": true,
-        "**/*synctex.gz": true,
-        "**/*.bbl":true,
-        "**/*.run.xml":true
+        // "**/*.aux": true,
+        // "**/*.fdb_latexmk": true,
+        // "**/*.fls": true,
+        // "**/*synctex.gz": true,
+        // "**/*.bbl":true,
+        // "**/*.run.xml":true
         },
         "ltex.language": "en-US",
         "latex-workshop.latex.autoClean.run": "onBuilt",
-        "latex-workshop.latex.autoBuild.cleanAndRetry.enabled": false,
-        "latex-workshop.latex.autoBuild.run": "never"
+        // "latex-workshop.latex.autoBuild.cleanAndRetry.enabled": false,
+        // "latex-workshop.latex.autoBuild.run": "never"
 
     }
